@@ -10,7 +10,7 @@ CSV.foreach("recipe_ingredients.csv", headers: true, header_converters: :symbol)
   recipe = recipes.find { |recipe| recipe.name == row[:recipe_name] }
 
   if recipe.nil?
-    recipe = Recipe.new(row[:recipe_name], row[:instructions], [])
+    recipe = Recipe.new(row[:recipe_name], row[:instructions])
     recipes << recipe
   end
 
